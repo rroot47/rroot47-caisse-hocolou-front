@@ -79,7 +79,7 @@
           <span class="sr-only">Dettes</span>
           <img class="h-6 w-6" src="assets/sensor-triangle-exclamation-light.svg" alt="hocoulou">
         </a>
-        <a href="#" class="text-gray-400 hover:bg-blue-600 flex-shrink-0 inline-flex items-center justify-center h-14 w-14 rounded-lg">
+        <a routerLink="/adherent" class="text-gray-400 hover:bg-blue-600 flex-shrink-0 inline-flex items-center justify-center h-14 w-14 rounded-lg">
           <span class="sr-only">Adhésion</span>
           <img class="h-6 w-6" src="assets/users-gear-light.svg" alt="hocoulou">
         </a>
@@ -120,114 +120,25 @@
                       </th>
                     </tr>
                     </thead>
-                    <tbody class="divide-y divide-gray-200 bg-white">
-                    <tr>
+                    <tbody class="divide-y divide-gray-200 bg-white" *ngFor="let user of userModel">
+                    <tr  *ngIf="user.montantAdhesion==40">
                       <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
                         <div class="flex items-center">
                           <div class="ml-4">
-                            <div class="font-medium text-gray-900">Sylla</div>
+                            <div class="font-medium text-gray-900">{{ user.nom }}</div>
                           </div>
                         </div>
                       </td>
                       <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        <div class="text-gray-900">Boubou</div>
+                        <div class="text-gray-900">{{ user.prenom }}</div>
                       </td>
                       <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        <div class="text-gray-900">066454912</div>
+                        <div class="text-gray-900">{{ user.telephone }}</div>
                       </td>
-                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">80 Rue Cesaria Évora</td>
+                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ user.domicile }}</td>
                       <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                         <a href="#">
                           <img class="h-6 w-6" src="assets/Icon awesome-eye.svg" alt="hocoulou">
-                          <span class="sr-only">, boubou</span>
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
-                        <div class="flex items-center">
-                          <div class="ml-4">
-                            <div class="font-medium text-gray-900">Sylla</div>
-                          </div>
-                        </div>
-                      </td>
-                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        <div class="text-gray-900">Boubou</div>
-                      </td>
-                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        <div class="text-gray-900">066454912</div>
-                      </td>
-                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">80 Rue Cesaria Évora</td>
-                      <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                        <a href="#">
-                          <img class="h-6 w-6" src="assets/Icon awesome-eye.svg" alt="hocoulou">
-                          <span class="sr-only">, boubou</span>
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
-                        <div class="flex items-center">
-                          <div class="ml-4">
-                            <div class="font-medium text-gray-900">Sylla</div>
-                          </div>
-                        </div>
-                      </td>
-                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        <div class="text-gray-900">Boubou</div>
-                      </td>
-                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        <div class="text-gray-900">066454912</div>
-                      </td>
-                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">80 Rue Cesaria Évora</td>
-                      <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                        <a href="#">
-                          <img class="h-6 w-6" src="assets/Icon awesome-eye.svg" alt="hocoulou">
-                          <span class="sr-only">, boubou</span>
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
-                        <div class="flex items-center">
-                          <div class="ml-4">
-                            <div class="font-medium text-gray-900">Sylla</div>
-                          </div>
-                        </div>
-                      </td>
-                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        <div class="text-gray-900">Boubou</div>
-                      </td>
-                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        <div class="text-gray-900">066454912</div>
-                      </td>
-                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">80 Rue Cesaria Évora</td>
-                      <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                        <a href="#">
-                          <img class="h-6 w-6" src="assets/Icon awesome-eye.svg" alt="hocoulou">
-                          <span class="sr-only">, boubou</span>
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
-                        <div class="flex items-center">
-                          <div class="ml-4">
-                            <div class="font-medium text-gray-900">Sylla</div>
-                          </div>
-                        </div>
-                      </td>
-                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        <div class="text-gray-900">Boubou</div>
-                      </td>
-                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                        <div class="text-gray-900">066454912</div>
-                      </td>
-                      <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">80 Rue Cesaria Évora</td>
-                      <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                        <a href="#">
-                          <img class="h-6 w-6" src="assets/Icon awesome-eye.svg" alt="hocoulou">
-                          <span class="sr-only">, boubou</span>
                         </a>
                       </td>
                     </tr>

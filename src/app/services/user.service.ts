@@ -19,4 +19,9 @@ export class UserService {
   getAllMembres():Observable<UserModel> {
     return this.http.get<UserModel>(environment.backendHost + "/hc/membres")
   }
+
+  addUser(nom:string, prenom:string, email:string, password:string, confirmPassword:string){
+    let body = {nom:nom, prenom:prenom, email:email, password:password, confirmPassword:confirmPassword};
+    return this.http.post(environment.backendHost+"/hc/user",body);
+  }
 }

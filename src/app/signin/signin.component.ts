@@ -36,7 +36,6 @@ export class SigninComponent implements OnInit {
     this.authService.signInUser(email, password).subscribe({
       next:(data:any)=>{
         localStorage.setItem("accessToken",data.accessToken);
-        //localStorage.setItem("role", data.roles);
         this.router.navigate(['/member']);
       },
       error: err => {

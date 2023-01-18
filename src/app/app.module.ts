@@ -13,11 +13,13 @@ import {RequestInterceptorService} from "./services/requestInterceptor.service";
 import { MembreComponent } from './membre/membre.component';
 import { HeaderComponent } from './header/header.component';
 import {AuthGuardService} from "./services/auth.guard.service";
+import { AdherentComponent } from './adherent/adherent.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path : 'signin', component:SigninComponent},
   {path : 'signup', component:SignupComponent},
+  {path : 'adherent', component:AdherentComponent, canActivate:[AuthGuardService]},
   {path : 'member', component:MembreComponent, canActivate:[AuthGuardService]},
   {path : '', redirectTo : 'home', pathMatch : 'full'},
   {path : '**', redirectTo : 'home'},
@@ -30,7 +32,8 @@ const routes: Routes = [
     SigninComponent,
     SignupComponent,
     MembreComponent,
-    HeaderComponent
+    HeaderComponent,
+    AdherentComponent
   ],
   imports: [
     BrowserModule,

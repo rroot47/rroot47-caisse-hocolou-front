@@ -10,8 +10,8 @@ export class RequestInterceptorService implements HttpInterceptor{
   constructor() {
   }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    if(sessionStorage.getItem('accessToken')) {
-      this.token = sessionStorage.getItem('accessToken');
+    if(localStorage.getItem('accessToken')) {
+      this.token = localStorage.getItem('accessToken');
       let jwtTokem = req.clone({
         setHeaders: {
           Authorization: `Bearer ${this.token}`

@@ -27,32 +27,38 @@
 
       <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          <form action="#" method="POST" class="space-y-6">
+          <form class="space-y-6" [formGroup]="signUpForm"  (ngSubmit)="onSubmit()">
             <div>
               <label for="email" class="block text-sm font-medium text-gray-700">Nom *</label>
               <div class="mt-1">
-                <input id=" name" name="nom" type="text"  required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm">
+                <input id=" name"  type="text" formControlName="nom" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm">
               </div>
             </div>
 
             <div>
               <label for="email" class="block text-sm font-medium text-gray-700">Prénom *</label>
               <div class="mt-1">
-                <input id="pernom" name="prenom" type="text"  required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm">
+                <input id="pernom"  type="text" formControlName="prenom" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm">
               </div>
             </div>
 
             <div>
               <label for="email" class="block text-sm font-medium text-gray-700">Email *</label>
               <div class="mt-1">
-                <input id="email" name="email" type="email" autocomplete="email" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm">
+                <input id="email" type="email" formControlName="email" autocomplete="email" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm">
               </div>
             </div>
 
             <div class="space-y-1">
               <label for="password" class="block text-sm font-medium text-gray-700">Mot de passe * </label>
               <div class="mt-1">
-                <input id="password" name="password" type="password" autocomplete="current-password" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm">
+                <input id="password" type="password" formControlName="password" autocomplete="current-password" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm">
+              </div>
+            </div>
+            <div class="space-y-1">
+              <label for="cpassword" class="block text-sm font-medium text-gray-700">Confimer le mot de passe * </label>
+              <div class="mt-1">
+                <input id="cpassword"  type="password" formControlName="confirmPassword" autocomplete="current-password" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm">
               </div>
             </div>
             <div>

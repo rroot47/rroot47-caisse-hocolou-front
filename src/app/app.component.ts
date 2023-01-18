@@ -15,7 +15,6 @@ export class AppComponent implements OnInit{
     if(localStorage.getItem("accessToken")!=null){
       if(event instanceof NavigationStart)
         this.isAuth = true
-        console.log(event)
     }else{
       this.isAuth = false;
     }
