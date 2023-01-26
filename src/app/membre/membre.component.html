@@ -1,108 +1,17 @@
-<div class="h-full overflow-hidden">
+<div class="left-0 h-full overflow-hidden top-1">
 <div class="flex h-full flex-col">
-  <!-- Top nav-->
-  <header class="relative flex h-16 flex-shrink-0 items-center bg-white">
-    <!-- Logo area -->
-    <div class="absolute inset-y-0 left-0 md:static md:flex-shrink-0">
-      <a href="#" class="flex h-16 w-16 items-center justify-center bg-amber-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600 md:w-20">
-        <img class="h-8 w-auto" src="assets/logo-white.svg" alt="hocoulou">
-      </a>
-    </div>
-    <!-- Picker area -->
-    <div class="mx-auto md:hidden">
-      <div class="relative">
-        <label for="inbox-select" class="sr-only">Choose inbox</label>
-        <select id="inbox-select" class="rounded-md border-0 bg-none pl-3 pr-8 text-base font-medium text-gray-900 focus:ring-2 focus:ring-indigo-600">
-          <option>Utilisateurs</option>
-          <option>Dépenses</option>
-          <option>Dettes</option>
-          <option selected>Adhésion</option>
-          <option>Déconnexion</option>
-        </select>
-        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center justify-center pr-2">
-          <svg class="h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-          </svg>
-        </div>
-      </div>
-    </div>
-    <!-- Desktop nav area -->
-    <div class="hidden md:flex md:min-w-0 md:flex-1 md:items-center md:justify-between">
-      <div class="min-w-0 flex-1">
-        <div class="relative max-w-2xl text-gray-400 focus-within:text-gray-500">
-          <label for="desktop-search" class="sr-only">Recherche</label>
-          <input id="desktop-search" type="search" placeholder="Recherche" class="block w-full border-transparent pl-12 placeholder-gray-500 focus:border-transparent focus:ring-0 sm:text-sm">
-          <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center justify-center pl-4">
-            <!-- Heroicon name: mini/magnifying-glass -->
-            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
-            </svg>
-          </div>
-        </div>
-      </div>
-      <!-- <div class="ml-10 flex flex-shrink-0 items-center space-x-10 pr-4">
-        <div class="flex items-center space-x-8">
-           <span class="inline-flex">
-              <a href="#" class="-mx-1 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500">
-                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
-                </svg>
-              </a>
-            </span>
-          <div class="relative inline-block text-left">
-            <button type="button" class="flex rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2" id="menu-0-button" aria-expanded="false" aria-haspopup="true">
-              <img class="h-8 w-8 rounded-full" src="https://assets.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-            </button>
-          </div>
-        </div>
-      </div>-->
-    </div>
-    <div class="relative z-40 md:hidden" role="dialog" aria-modal="true">
-      <div class="hidden sm:fixed sm:inset-0 sm:block sm:bg-gray-600 sm:bg-opacity-75">
-      </div>
-    </div>
-  </header>
-  <!-- Bottom section -->
   <div class="flex min-h-0 flex-1 overflow-hidden">
-    <!-- Narrow sidebar-->
-    <nav aria-label="Sidebar" class="hidden md:block md:flex-shrink-0 md:overflow-y-auto md:bg-blue-900">
-      <div class="relative flex w-20 flex-col space-y-3 p-3">
-        <a href="#" class="bg-blue-700 text-white flex-shrink-0 inline-flex items-center justify-center h-14 w-14 rounded-lg">
-          <span class="sr-only">Utilisateurs</span>
-          <img class="h-6 w-6" src="assets/users-light (1).svg" alt="hocoulou">
-        </a>
-        <a href="#" class="text-gray-400 hover:bg-blue-600 flex-shrink-0 inline-flex items-center justify-center h-14 w-14 rounded-lg">
-          <span class="sr-only">Depenses</span>
-          <img class="h-6 w-6" src="assets/euro-sign-light.svg" alt="hocoulou">
-        </a>
-        <a href="#" class="text-gray-400 hover:bg-blue-600 flex-shrink-0 inline-flex items-center justify-center h-14 w-14 rounded-lg">
-          <span class="sr-only">Dettes</span>
-          <img class="h-6 w-6" src="assets/sensor-triangle-exclamation-light.svg" alt="hocoulou">
-        </a>
-        <a routerLink="/adherent" class="text-gray-400 hover:bg-blue-600 flex-shrink-0 inline-flex items-center justify-center h-14 w-14 rounded-lg">
-          <span class="sr-only">Adhésion</span>
-          <img class="h-6 w-6" src="assets/users-gear-light.svg" alt="hocoulou">
-        </a>
-        <a (click)="onSignOut()" routerLink="/signin" class="text-gray-400 hover:bg-blue-600 flex-shrink-0 inline-flex items-center justify-center h-14 w-14 rounded-lg">
-          <span class="sr-only">Déconnexion</span>
-          <img class="h-6 w-6" src="assets/arrow-right-from-bracket-light.svg" alt="hocoulou">
-        </a>
-      </div>
-    </nav>
-    <!-- Main area -->
-    <main class="min-w-0 flex-1 border-t border-gray-200 lg:flex mb-8 md:mb-0 sm:mb-0 lg:mb-0">
+    <div class="min-w-0 flex-1 border-t border-gray-200 lg:flex mb-8 md:mb-0 sm:mb-0 lg:mb-0">
       <!-- Primary column -->
-      <section aria-labelledby="primary-heading" class=" mt-10 flex h-full min-w-0 flex-1 flex-col overflow-y-auto lg:order-last">
-        <h1 id="primary-heading" class="sr-only">Home</h1>
+      <div aria-labelledby="primary-heading" class=" mt-10 flex h-full min-w-0 flex-1 flex-col overflow-y-auto lg:order-last">
         <div class="px-4 sm:px-6 lg:px-8">
           <div class="sm:flex sm:items-center">
-           <div class="sm:flex-auto">
-             <button type="button" class="inline-flex items-center justify-center rounded-md border border-transparent bg-amber-400 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-300 focus:ring-offset-2 sm:w-auto">Ajouter un adhérant</button>
-              <!--<p class="mt-2 text-sm text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>-->
+            <div class="sm:flex-auto">
+              <h2 class="mt-8 pl-10 text-3xl font-extrabold tracking-tight text-blue-900 ">Liste des adhérants</h2>
             </div>
-            <!--<div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
-              <button type="button" class="inline-flex items-center justify-center rounded-md border border-transparent bg-amber-400 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-300 focus:ring-offset-2 sm:w-auto">Ajouter un adhérant</button>
-            </div>-->
+            <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
+              <button routerLink="/adherent" type="button" class="inline-flex items-center justify-center rounded-md border border-transparent bg-amber-400 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-300 focus:ring-offset-2 sm:w-auto">Ajouter un adhérant</button>
+            </div>
           </div>
           <div class="mt-8 flex flex-col">
             <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -149,40 +58,14 @@
             </div>
           </div>
         </div>
-      </section>
+      </div>
       <!-- Secondary column (hidden on smaller screens) -->
-      <aside class="hidden lg:order-first lg:block lg:flex-shrink-0">
+     <!-- <aside class="hidden lg:order-first lg:block lg:flex-shrink-0">
         <div class="relative flex h-full w-96 flex-col overflow-y-auto border-r border-gray-200 bg-gray-100">
           <h2 class="mt-8 pl-10 text-3xl font-extrabold tracking-tight text-blue-900 ">Liste des adhérants</h2>
         </div>
-      </aside>
-    </main>
+      </aside>-->
+    </div>
   </div>
-  <!--<div>
-    <footer class="bg-white">
-      <div class="mx-auto max-w-7xl overflow-hidden py-6 px-6 lg:px-8">
-        <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
-          <div class="px-5 py-2">
-            <a href="#" class="text-base text-gray-500 hover:text-gray-900">Tel : (+33) 125456585</a>
-          </div>
-          <div class="px-5 py-2">
-            <a href="#" class="text-base text-gray-500 hover:text-gray-900">Adresse: 14 rue exemple.9658. exemple</a>
-          </div>
-          <div class="px-5 py-2">
-            <a href="#" class="text-base text-gray-500 hover:text-gray-900">Qui somme-nous</a>
-          </div>
-          <div class="px-5 py-2">
-            <a href="#" class="text-base text-gray-500 hover:text-gray-900">Contact</a>
-          </div>
-          <div class="px-5 py-2">
-            <a href="#" class="text-base text-gray-500 hover:text-gray-900">Adhérer</a>
-          </div>
-          <div class="px-5 py-2">
-            <a href="#" class="text-base text-gray-500 hover:text-gray-900">&copy;2023 Hocolou</a>
-          </div>
-        </nav>
-      </div>
-    </footer>
-  </div>-->
 </div>
 </div>
