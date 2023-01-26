@@ -1,37 +1,46 @@
 import { Component, OnInit } from '@angular/core';
 import {FormArray, FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {UserModel} from "../models/User.model";
 import {UserService} from "../services/user.service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+import {UserModel} from "../models/User.model";
 
 @Component({
-  selector: 'app-adherent',
-  templateUrl: './adherent.component.html',
-  styleUrls: ['./adherent.component.css']
+  selector: 'app-edit-membre',
+  templateUrl: './edit-membre.component.html',
+  styleUrls: ['./edit-membre.component.css']
 })
-export class AdherentComponent implements OnInit {
+export class EditMembreComponent implements OnInit {
 
   userForm : FormGroup | any;
   newYears : [] | any
 
-  constructor(private formBuilder: FormBuilder, private  userService:UserService, private router:Router) { }
+  membreId!:number;
+
+  membre:UserModel[]|any = [];
+
+  constructor(private route:ActivatedRoute ,private formBuilder: FormBuilder, private  userService:UserService, private router:Router) {
+    this.membreId = this.route.snapshot.params['id'];
+  }
 
   ngOnInit(): void {
-    this.initFormUser()
+    this.userService.getMembre(this.membreId).subscribe((data:UserModel)=>{
+      this.membre =data;
+      this.initFormUser()
+    })
   }
 
   initFormUser(){
     this.userForm = this.formBuilder.group({
-      nom : ['', Validators.required],
-      prenom : ['', Validators.required],
-      telephone : ['', Validators.required],
-      domicile : ['', Validators.required],
-      montantAdhesion : ['', Validators.required],
+      nom : [this.membre.nom, Validators.required],
+      prenom : [this.membre.prenom, Validators.required],
+      telephone : [this.membre.telephone, Validators.required],
+      domicile : [this.membre.domicile, Validators.required],
+      montantAdhesion : [this.membre.montantAdhesion, Validators.required],
       adherant : this.formBuilder.array([])
     });
   }
 
-  addUser(){
+  updateUser(){
     const nom = this.userForm.get('nom').value;
     const prenom = this.userForm.get('prenom').value;
     const telephone = this.userForm.get('telephone').value;
@@ -40,14 +49,15 @@ export class AdherentComponent implements OnInit {
     const adherant = this.userForm.get('adherant').value ? this.userForm.get('adherant').value : [];
 
     const user = new UserModel(nom,prenom,telephone,domicile,montantAdhesion, adherant);
-    this.userService.addAdherent(user).subscribe(data=>{
-      this.router.navigate(['/member'])
+    this.userService.updateAdherant(this.membreId,user).subscribe(data=>{
+      this.router.navigate(['/dette'])
     });
   }
 
   get getYears(){
     return this.userForm.controls['adherant'] as FormArray
   }
+
   addYeats(){
     this.newYears =  this.formBuilder.group({
       annee:['', Validators.required],

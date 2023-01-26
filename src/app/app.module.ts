@@ -14,13 +14,22 @@ import { MembreComponent } from './membre/membre.component';
 import { HeaderComponent } from './header/header.component';
 import {AuthGuardService} from "./services/auth.guard.service";
 import { AdherentComponent } from './adherent/adherent.component';
+import { AdminComponent } from './admin/admin.component';
+import { DetteComponent } from './dette/dette.component';
+import { EditMembreComponent } from './edit-membre/edit-membre.component';
+import { DepenseComponent } from './depense/depense.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path : 'signin', component:SigninComponent},
   {path : 'signup', component:SignupComponent},
-  {path : 'adherent', component:AdherentComponent, canActivate:[AuthGuardService]},
-  {path : 'member', component:MembreComponent, canActivate:[AuthGuardService]},
+  {path : 'admin', component:AdminComponent,  canActivate:[AuthGuardService], children:[
+      {path : 'adherent', component:AdherentComponent},
+      {path : 'member', component:MembreComponent},
+      {path : 'dette', component:DetteComponent},
+      {path : 'depense', component:DepenseComponent},
+      {path : 'edit-member/:id', component:EditMembreComponent}
+    ]},
   {path : '', redirectTo : 'home', pathMatch : 'full'},
   {path : '**', redirectTo : 'home'},
 
@@ -33,7 +42,11 @@ const routes: Routes = [
     SignupComponent,
     MembreComponent,
     HeaderComponent,
-    AdherentComponent
+    AdherentComponent,
+    AdminComponent,
+    DetteComponent,
+    EditMembreComponent,
+    DepenseComponent
   ],
   imports: [
     BrowserModule,

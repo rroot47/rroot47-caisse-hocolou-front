@@ -28,4 +28,8 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
   }
 
+  onSignOut() {
+    localStorage.removeItem("accessToken")
+    this.router.navigate(['/home']);
+  }
 }
